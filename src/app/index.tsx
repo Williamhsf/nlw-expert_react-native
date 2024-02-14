@@ -1,27 +1,27 @@
-import { useState, useRef } from "react"
-import { View, FlatList, SectionList, Text } from "react-native"
-import { Link } from "expo-router"
+import { useRef, useState } from 'react'
+import { View, FlatList, SectionList, Text } from 'react-native'
+import { Link } from 'expo-router'
 
-import { useCartStore } from "@/stores/cart-store";
-import { CATEGORIES, MENU } from "@/utils/data/products";
+import { useCartStore } from '@/stores/cart-store'
+import { CATEGORIES, MENU, ProductProps } from '@/utils/data/products'
 
-import { Header } from '@/components/header';
+import { Header } from '@/components/header'
 import { CategoryButton } from '@/components/category-button'
-import { Product } from "@/components/products"
+import { Product } from '@/components/product'
 
 export default function Home() {
   const cartStore = useCartStore()
   const [category, setCategory] = useState(CATEGORIES[0])
 
-  const sectionLIstRef = useRef<SectionList>(null)
+  const sectionLIstRef = useRef<SectionList<ProductProps>>(null)
 
-  const cartQuantityItems = cartStore.products.reduce((total, product) => total + product.quantity, 0)
+  const cartQuantityItems = cartStore.products.reduce((total, product) => total + product.quantity, 0,)
 
   function handleCategorySelect(selectedCategory: string) {
     setCategory(selectedCategory)
 
     const sectionIndex = CATEGORIES.findIndex(
-      (category) => category === selectedCategory
+      (category) => category === selectedCategory,
     )
 
     if (sectionLIstRef.current) {
