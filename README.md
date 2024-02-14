@@ -1,4 +1,4 @@
-Status: doing 🚀
+Status: done 🚀
 
 ## Food App
 O Food App é um aplicativo de cardápio que oferece aos clientes a facilidade de selecionar os pratos desejados. Ao concluir o pedido no aplicativo, a solicitação é automaticamente enviada para o WhatsApp do restaurante, agilizando o processo de compra e proporcionando uma experiência mais conveniente aos usuários.
